@@ -22,9 +22,15 @@
                   </li>
 
                   <li>
-                    <a href="{{url('/')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
+                    @if(auth()->check())
+                    <a href="{{url('/admin')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
+                    ادمین
+                    </a>
+                    @else
+                    <a href="{{url('/login')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
                     ورود
                     </a>
+                    @endif
                   </li>
 
 
