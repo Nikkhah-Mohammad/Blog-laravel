@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin','Admin\AdminController@index');
+Route::group(['middleware' => ['admin','api']],function () {
+    Route::get('/admin','Admin\AdminController@index');
+});
+
+
 
 
