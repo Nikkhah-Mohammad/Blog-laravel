@@ -15,6 +15,9 @@
                     </a>
                   </li>
 
+                
+
+
                   <li>
                     <a href="{{url('/')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
                     تماس با ما
@@ -32,6 +35,21 @@
                     </a>
                     @endif
                   </li>
+
+
+                  <li>
+
+<a class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      خروج
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+
+</li>
 
 
               </ul>

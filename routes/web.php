@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::group(['middleware' => ['admin','api']],function () {
     Route::get('/admin','Admin\AdminController@index');
+    Route::get('/admin/article','Admin\ArticleController@index');
+    Route::get('/admin/article/edit/{id}','Admin\ArticleController@edit');
+    Route::get('/admin/article/create','Admin\ArticleController@create');
 });
 
 

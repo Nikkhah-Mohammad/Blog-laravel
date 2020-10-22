@@ -2,29 +2,48 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Article;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return View('admin.dashboard',[]);
-    }
+        if($request->get('action') =="delete"){
+            $del = Article::where(['id'=>$request->get('pid')])->update(['delete'=>1]);
+        }
 
+
+        $list = Article::where(['delete'=>0])->get();
+        
+        return view('admin.article.list',['list'=>$list]);
+    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
+
     {
-        //
+        if($request->post('action') && $request->get('action') =="update"){
+            $save=Article::where(['id'=>$request->get('pid')])->first();
+        }else{
+            $save=new Article();
+        }
+
+        $save->title = $request->get('title');
+        $save->content = $request->get('content');
+        $save->avatar = $request->get('avatar');
+        $save->save();
+
+        return redirect()->back()->with('alert',"ذخیره شد");
     }
 
     /**
@@ -57,7 +76,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edite = Article::where(['id'=>$id])->first();
+        return View('admin.article.edit',['edite'=>$edite]);
     }
 
     /**
