@@ -19,7 +19,7 @@
 
 
                   <li>
-                    <a href="{{url('/')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
+                    <a href="{{url('/call')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
                     تماس با ما
                     </a>
                   </li>

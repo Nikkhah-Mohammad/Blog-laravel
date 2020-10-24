@@ -1,10 +1,16 @@
-@extends('admin.dashboard')
+ @extends('admin.dashboard')
 @section('adminContent')
 <div class="container">
  <div class="row">
      <div  class="col-sm-12">
      <p class="alert alert-info text-right font14">
-       ویرایش مقاله 
+       @if($edite)
+       ویرایش
+          @else
+           ایجاد
+          @endif 
+        مقاله 
+
      </p>
      </div> 
  </div>

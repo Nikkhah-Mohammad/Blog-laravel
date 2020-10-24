@@ -102,4 +102,9 @@ class ArticleController extends Controller
     {
         //
     }
+
+    public function add(){
+        $edite = null;
+        return View('admin.article.edit',['edite'=>$edite]);
+    }
 }
