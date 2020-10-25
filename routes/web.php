@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
+Route::get('/call','HomeController@call');
+Route::get('/article/{id}','HomeController@getArticle');
+Route::get('/about','HomeController@about');
 
 Auth::routes();
 
@@ -27,7 +28,6 @@ Route::group(['middleware' => ['admin','api']],function () {
     
     Route::get('/admin/article/new','Admin\ArticleController@add');
     
-    Route::get('/call','Admin\AdminController@call');
 });
 
 

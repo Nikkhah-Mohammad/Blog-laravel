@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -36,8 +37,9 @@ class ArticleController extends Controller
             $save=Article::where(['id'=>$request->get('pid')])->first();
         }else{
             $save=new Article();
+           
         }
-
+        $save->useer_id =Auth::id();
         $save->title = $request->get('title');
         $save->content = $request->get('content');
         $save->avatar = $request->get('avatar');

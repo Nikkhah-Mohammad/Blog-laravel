@@ -45,10 +45,10 @@
      <p class="text-right font-14 text-secondary d-block">تصویر مقاله :</p>
 
      @if($edite && $edite->avatar)
-     <img src="<?php url('/').$edite->avatar ?>" width=150px alt="">
+     <img src="{{ $edite->avatar }}" width=150px alt="">
      @endif
      <input type="text" name="avatar" 
-         @if($edite && $edite->avatar) value="{{ $edite->avatar }}" @endif
+         @if($edite && $edite->avatar) value="<?php echo $edite->avatar ?>" @endif
           class="form-control" id="">
      <button class="btn btn-success w-25 d-block m-2 " type="submit">ذخیره </button>
 

@@ -24,12 +24,6 @@
           </li> 
 
           <li>
-             <a class="d-block font-16 p-2 text-secondary text-right text decoration-none" href="{{ url('/admin/category') }}">
-             دسته بندی ها
-             </a>
-          </li> 
-
-          <li>
              <a class="d-block font-16 p-2 text-secondary text-right text decoration-none" href="{{ url('/admin/files') }}">
              مدریت فایل
              </a>

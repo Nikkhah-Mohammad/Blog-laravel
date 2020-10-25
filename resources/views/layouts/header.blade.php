@@ -10,7 +10,7 @@
                   </li>
 
                   <li>
-                    <a href="{{url('/')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
+                    <a href="{{url('/about')}}"class="d-inline-block float-right text-decoration-none p-3 font-18  BYekan">
                     درباره ما
                     </a>
                   </li>
